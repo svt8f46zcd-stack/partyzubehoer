@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, PackageCheck, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { categories, products } from "@/lib/site";
-import moebel from "@/assets/moebel.jpg";
 
 const title = "Ausstattung mieten – Garnituren, Gläser, Zapfanlagen, Zelte | Partyzubehör Buchert";
 const description =
@@ -27,10 +26,12 @@ function Page() {
     <>
       <section className="relative overflow-hidden bg-ink text-ink-foreground">
         <img
-          src={moebel}
+          src="https://images.pexels.com/photos/9703892/pexels-photo-9703892.jpeg?cs=srgb&dl=pexels-jonathanborba-9703892.jpg&fm=jpg"
           alt="Stehtische und Bierzeltgarnituren mit weißen Hussen"
-          width={1200}
-          height={912}
+          width={1000}
+          height={667}
+          loading="eager"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover opacity-40"
         />
         <div className="hero-overlay absolute inset-0" />
