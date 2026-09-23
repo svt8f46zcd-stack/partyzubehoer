@@ -2,10 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Phone, Truck, PackageCheck, Tent } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site";
-import hero from "@/assets/hero.jpg";
-import moebel from "@/assets/moebel.jpg";
-import getraenke from "@/assets/getraenke.jpg";
-import zelt from "@/assets/zelt.jpg";
 
 const title = "Partyzubehör Buchert – Partyverleih für Mainz & Umgebung";
 const description =
@@ -43,10 +39,17 @@ const pillars = [
   },
 ];
 
+const imageUrls = {
+  hero: "https://images.pexels.com/photos/37958132/pexels-photo-37958132.jpeg?cs=srgb&dl=pexels-jonathanborba-37958132.jpg&fm=jpg",
+  moebel: "https://images.pexels.com/photos/9703892/pexels-photo-9703892.jpeg?cs=srgb&dl=pexels-jonathanborba-9703892.jpg&fm=jpg",
+  getraenke: "https://images.pexels.com/photos/1089930/pexels-photo-1089930.jpeg?cs=srgb&dl=pexels-bohlemedia-1089930.jpg&fm=jpg",
+  zelt: "https://images.pexels.com/photos/4993952/pexels-photo-4993952.jpeg?cs=srgb&dl=pexels-anastasia-shuraeva-4993952.jpg&fm=jpg",
+};
+
 const showcase = [
-  { img: moebel, label: "Möbel & Hussen", title: "Garnituren, Stehtische, Hussen", w: 1200, h: 912 },
-  { img: getraenke, label: "Getränke & Ausschank", title: "Zapfanlagen, Gläser, Kühlung", w: 1200, h: 912 },
-  { img: zelt, label: "Zelte & Wetterschutz", title: "Partyzelte, Pavillons, Heizpilze", w: 1200, h: 912 },
+  { img: imageUrls.moebel, label: "Möbel & Hussen", title: "Garnituren, Stehtische, Hussen", w: 1000, h: 667 },
+  { img: imageUrls.getraenke, label: "Getränke & Ausschank", title: "Zapfanlagen, Gläser, Kühlung", w: 667, h: 1000 },
+  { img: imageUrls.zelt, label: "Zelte & Wetterschutz", title: "Partyzelte, Pavillons, Heizpilze", w: 667, h: 1000 },
 ];
 
 function Index() {
@@ -55,10 +58,10 @@ function Index() {
       {/* HERO */}
       <section className="relative isolate min-h-[92svh] overflow-hidden bg-ink text-ink-foreground">
         <img
-          src={hero}
+          src={imageUrls.hero}
           alt="Festlich eingedeckte Bierzeltgarnituren mit weißen Hussen bei Abendlicht"
-          width={1920}
-          height={1152}
+          width={1000}
+          height={667}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="hero-overlay absolute inset-0" />
@@ -130,6 +133,7 @@ function Index() {
                   alt={s.title}
                   width={s.w}
                   height={s.h}
+                  decoding="async"
                   loading="lazy"
                   className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
